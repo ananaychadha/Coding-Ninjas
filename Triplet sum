@@ -1,0 +1,25 @@
+def count(a,list):
+    c=0
+    for ele in lst:
+        if ele==a:
+            c+=1
+    return c
+
+
+def printTriplet(list,sum):
+    for i in range (len(list)-2):
+        for j in range (i+1,len(list)-1):
+            newSum=sum-list[i]-list[j]
+            if newSum in list[j+1:]:
+                for k in range(count(newSum ,list[j+1:])):
+                    mini=min(list[i],list[j],newSum)
+                    maxi=max(list[i],list[j],newSum)
+                    midd=sum-mini-maxi
+                    print(mini,midd,maxi)
+                    
+                
+
+n=int(input())
+list=[int(x) for x in input().split()]
+sum=int(input())
+printTriplet(lst,sum)

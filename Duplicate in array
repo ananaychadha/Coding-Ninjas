@@ -1,0 +1,12 @@
+def duplicate(arr):
+    size= len(arr)
+    result = 0
+    
+    for i in range(0,size-1):
+        result=result^i
+        result=result^arr[i]
+    return result^arr[size-1]
+    
+n = int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+print(duplicate(arr))

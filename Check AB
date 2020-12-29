@@ -1,0 +1,22 @@
+def check_a_b(s):
+    if s[0]=="a" and len(s)==1:
+        return True
+    elif len(s)==2 and s[0]=="a" and s[1]=="a":
+        return True
+    elif len(s)==3 and s[0]=="a" and s[1]=="b" and s[2]=="b":
+        return True
+    elif s[0]=="b" and len(s)==1:
+        return False
+    if s[0]=="a":
+        return check_a_b(s[1:])
+    if s[0]=="b" and s[1]=="b" and len(s)>2:
+        return check_a_b(s[2:])
+
+    
+    
+n = input()
+c = check_a_b(n)
+if c:
+    print('true')
+else:
+    print('false')
