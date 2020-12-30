@@ -1,0 +1,29 @@
+def countBracketReversals(string):
+    count = 0
+    length = len(string) # len
+    s = []
+    
+    if (length%2):
+        return -1
+    
+    for char in string:
+        if char != '}':
+            s.append(char)
+        else:
+            if (not s): # length of stack is not 0
+                s.append(char) 
+            else:
+                s.pop()
+    while s:
+        c1 = s.pop()
+        c2 = s.pop()
+        if c1!=c2:
+            count+=2
+        else:
+            count+=1
+           
+    return(count)
+
+string = input()
+ans = countBracketReversals(string)
+print(ans)
