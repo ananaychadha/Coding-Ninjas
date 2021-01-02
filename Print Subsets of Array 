@@ -1,0 +1,19 @@
+def sub_lists(list1): 
+    n=len(list1) 
+    if(n<=0): 
+        sublist = [ [] ] 
+        return sublist  
+    sublist = sub_lists(list1[:n-1]) 
+    outputLen = len(sublist) 
+    for i in range(0, outputLen): 
+        sublist.append(sublist[i].copy()) 
+        sublist[outputLen+i].append(list1[n-1]) 
+    return sublist  
+    
+n=int(input()) 
+li=list(int(i) for i in input().strip().split(' ')) 
+ans=sub_lists(li) 
+for i in ans: 
+    for j in i: 
+        print(j, end=' ') 
+    print()

@@ -1,0 +1,11 @@
+def printl(s,output):
+    length=len(s)
+    if length==0:
+        print(output)
+        return
+    for i in range(0,length):
+        printl(s[0:i]+s[i:],output+s[i])
+def printp(s):
+    printl(s,"")
+s=input()
+printp(s)
